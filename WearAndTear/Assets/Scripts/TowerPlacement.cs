@@ -7,7 +7,8 @@ public class TowerPlacement : MonoBehaviour
 
     public static TowerPlacement main;
 
-    [SerializeField] private GameObject[] towers;
+    //[SerializeField] private GameObject[] towers;
+    [SerializeField] private Tower[] towers;
 
     private int towerIndex = 0;
 
@@ -17,38 +18,14 @@ public class TowerPlacement : MonoBehaviour
         main = this;
     }
 
-    public GameObject GetTower()
+    public Tower GetTower()
     {
         
         return towers[towerIndex];
     }
 
-    /*[SerializeField] private Camera playerCamera;
-    private GameObject currentTower;
-
-    
-
-    // Update is called once per frame
-    void Update()
+    public void SetTower(int tower)
     {
-        if (currentTower != null)
-        {
-            Ray camray = playerCamera.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(camray, out RaycastHit hitInfor, 100f))
-            {
-                currentTower.transform.position = hitInfor.point;
-            }
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                currentTower = null;
-            }
-        }
+        towerIndex = tower;
     }
-
-    public void SetTowerToPlace(GameObject tower)
-    {
-        currentTower = Instantiate(tower, Vector3.zero, Quaternion.identity);
-    }*/
 }

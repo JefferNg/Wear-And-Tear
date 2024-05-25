@@ -30,8 +30,20 @@ public class PlotManager : MonoBehaviour
         // tower already on tile
         if (tower != null) return;
 
-        GameObject towerBuild = TowerPlacement.main.GetTower();
-        tower = Instantiate(towerBuild, transform.position, Quaternion.identity);
+        Tower towerBuild = TowerPlacement.main.GetTower();
+
+        if (towerBuild.cost > GameManager.main.gold)
+        {
+            Debug.Log("Tower too expensive");
+            return;
+        }
+        else
+        {
+            GameManager.main.SpendGold(towerBuild.cost);
+
+            tower = Instantiate(towerBuild.prefab, transform.position, Quaternion.identity);
+        }
+        
     }
 
 }
