@@ -4,7 +4,25 @@ using UnityEngine;
 
 public class TowerPlacement : MonoBehaviour
 {
-    [SerializeField] private Camera playerCamera;
+
+    public static TowerPlacement main;
+
+    [SerializeField] private GameObject[] towers;
+
+    private int towerIndex = 0;
+
+
+    private void Awake()
+    {
+        main = this;
+    }
+
+    public GameObject GetTower()
+    {
+        return towers[towerIndex];
+    }
+
+    /*[SerializeField] private Camera playerCamera;
     private GameObject currentTower;
 
     
@@ -31,5 +49,5 @@ public class TowerPlacement : MonoBehaviour
     public void SetTowerToPlace(GameObject tower)
     {
         currentTower = Instantiate(tower, Vector3.zero, Quaternion.identity);
-    }
+    }*/
 }

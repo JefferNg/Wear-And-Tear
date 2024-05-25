@@ -9,8 +9,12 @@ public class TowerTargeting : MonoBehaviour
     [SerializeField] private Transform rotatePoint;
     [SerializeField] private float rotationSpeed = 200f;
     [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float bps = 1f;
 
     private Transform target;
+    private float fireDelay;
 
     private void Update()
     {
@@ -25,6 +29,16 @@ public class TowerTargeting : MonoBehaviour
         if (!CheckTargetInRange())
         {
             target = null;
+        }
+        else
+        {
+            fireDelay += Time.deltaTime;
+
+            if (fireDelay >= 1f / bps)
+            {
+                Shoot();
+                fireDelay = 0f;
+            }
         }
     }
 
@@ -41,7 +55,7 @@ public class TowerTargeting : MonoBehaviour
 
     private void RotateToTarget()
     {
-        float angle = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg - 90f;
         
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
         rotatePoint.rotation = Quaternion.RotateTowards(rotatePoint.rotation, targetRotation, rotationSpeed * Time.deltaTime);
@@ -50,6 +64,13 @@ public class TowerTargeting : MonoBehaviour
     private bool CheckTargetInRange()
     {
         return Vector2.Distance(target.position, transform.position) <= targetRange;
+    }
+
+    private void Shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        BulletBehavior bscript = bullet.GetComponent<BulletBehavior>();
+        bscript.SetTarget(target);
     }
 
     private void OnDrawGizmosSelected()
