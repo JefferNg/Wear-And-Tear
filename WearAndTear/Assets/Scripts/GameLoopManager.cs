@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameLoopManager : MonoBehaviour
 {
-    private static Queue<int> enemyIDSummons;
+    /*private static Queue<int> enemyIDSummons;
 
     public bool end;
     // Start is called before the first frame update
@@ -27,6 +27,6 @@ public class GameLoopManager : MonoBehaviour
             }
             yield return null;
         }
-    }
+    }*/
 
 }
