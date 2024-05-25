@@ -19,6 +19,7 @@ public class TowerPlacement : MonoBehaviour
 
     public GameObject GetTower()
     {
+        
         return towers[towerIndex];
     }
 
