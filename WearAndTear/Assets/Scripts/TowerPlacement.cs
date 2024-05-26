@@ -7,10 +7,9 @@ public class TowerPlacement : MonoBehaviour
 
     public static TowerPlacement main;
 
-    //[SerializeField] private GameObject[] towers;
     [SerializeField] private Tower[] towers;
 
-    private int towerIndex = 0;
+    private Tower towerToBuild;
 
 
     private void Awake()
@@ -20,12 +19,18 @@ public class TowerPlacement : MonoBehaviour
 
     public Tower GetTower()
     {
-        
-        return towers[towerIndex];
+        return towerToBuild;
     }
 
     public void SetTower(int tower)
     {
-        towerIndex = tower;
+        if (tower == -1)
+        {
+            towerToBuild = null;
+            return;
+        }
+        towerToBuild = towers[tower];
+        Menu.main.ToggleMenu();
     }
+
 }

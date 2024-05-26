@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlotManager : MonoBehaviour
 {
@@ -17,7 +18,13 @@ public class PlotManager : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        sr.color = hoverColor;
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
+        if (TowerPlacement.main.GetTower() != null)
+        {
+            sr.color = hoverColor;
+        }
+        
     }
 
     private void OnMouseExit()
@@ -27,6 +34,10 @@ public class PlotManager : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
+        if (TowerPlacement.main.GetTower() == null) return;
+
         // tower already on tile
         if (tower != null) return;
 
@@ -37,13 +48,12 @@ public class PlotManager : MonoBehaviour
             Debug.Log("Tower too expensive");
             return;
         }
-        else
-        {
-            GameManager.main.SpendGold(towerBuild.cost);
 
-            tower = Instantiate(towerBuild.prefab, transform.position, Quaternion.identity);
-        }
-        
+        GameManager.main.SpendGold(towerBuild.cost);
+
+        tower = Instantiate(towerBuild.prefab, transform.position, Quaternion.identity);
+
+        TowerPlacement.main.SetTower(-1);
     }
 
 }

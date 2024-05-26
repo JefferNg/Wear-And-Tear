@@ -5,10 +5,17 @@ using TMPro;
 
 public class Menu : MonoBehaviour
 {
+    public static Menu main;
+
     [SerializeField] TextMeshProUGUI goldUI;
     [SerializeField] Animator anim;
 
     private bool isMenuOpen = true;
+
+    private void Awake()
+    {
+        main = this;
+    }
 
     private void OnGUI()
     {
