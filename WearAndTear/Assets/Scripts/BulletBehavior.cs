@@ -9,6 +9,7 @@ public class BulletBehavior : MonoBehaviour
     [SerializeField] private int dmg = 1;
 
     private Transform target;
+    private int targetLayer;
 
     private void Update()
     {
@@ -22,14 +23,21 @@ public class BulletBehavior : MonoBehaviour
     {
         if (!target) return;
 
+        if (target.gameObject.layer != targetLayer)
+        {
+            target = null;
+            return;
+        }
+
         Vector2 direction = (target.position - transform.position).normalized;
 
         rb.velocity = direction * speed;
     }
 
-    public void SetTarget(Transform _target)
+    public void SetTarget(Transform _target, int _targetLayer)
     {
         target = _target;
+        targetLayer = _targetLayer;
     }
 
     private void OnCollisionEnter2D(Collision2D other)

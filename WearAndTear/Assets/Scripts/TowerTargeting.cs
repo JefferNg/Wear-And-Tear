@@ -83,7 +83,7 @@ public class TowerTargeting : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         BulletBehavior bscript = bullet.GetComponent<BulletBehavior>();
-        bscript.SetTarget(target);
+        bscript.SetTarget(target, 6); // value of enemy layer
     }
 
     private void OnDrawGizmosSelected()
