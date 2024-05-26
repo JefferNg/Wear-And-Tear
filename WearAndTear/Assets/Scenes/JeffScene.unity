@@ -366,6 +366,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1713572908 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6057461690806757827, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+  m_PrefabInstance: {fileID: 3101548934607918765}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1724050207 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2080336386861811910, guid: e40873c069264354a9f958960df2020d, type: 3}
@@ -541,10 +546,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3934117671006481520, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 6440718241089845545, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -553,54 +554,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 432708292}
-    - target: {fileID: 8634728496862307017, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8634728496862307017, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8634728496862307017, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8634728496862307017, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8634728496862307017, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8634728496862307017, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8915619069827567062, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8915619069827567062, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8915619069827567062, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8915619069827567062, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8915619069827567062, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8915619069827567062, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -654,6 +607,14 @@ PrefabInstance:
       propertyPath: startPoint
       value: 
       objectReference: {fileID: 6598073397743821694}
+    - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
+      propertyPath: nextWaveAnim
+      value: 
+      objectReference: {fileID: 1727648801}
+    - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
+      propertyPath: goldCountAnim
+      value: 
+      objectReference: {fileID: 1713572908}
     - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: path.Array.data[0]
       value: 
