@@ -18,7 +18,7 @@ public class TowerTargeting : MonoBehaviour
 
     private void Update()
     {
-        if (target == null)
+        if (target == null || !ValidTarget())
         {
             FindTarget();
             return;
@@ -40,6 +40,19 @@ public class TowerTargeting : MonoBehaviour
                 fireDelay = 0f;
             }
         }
+    }
+
+    private bool ValidTarget()
+    {
+        if (target == null) return false;
+
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetRange, (Vector2)transform.position, 0f, enemyMask);
+
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.transform == target) return true;
+        }
+        return false;
     }
 
     private void FindTarget()

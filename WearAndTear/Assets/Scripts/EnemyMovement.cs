@@ -29,8 +29,11 @@ public class EnemyMovement : MonoBehaviour
             // if character reaches the last waypoint marker
             if (waypointIndex == waypoints.waypoints.Length - 1) 
             {
-                Summoner.onEnemyDestroy.Invoke();
-                GameManager.main.ReduceHealth();
+                if (gameObject.layer != 8)
+                {
+                    Summoner.onEnemyDestroy.Invoke();
+                    GameManager.main.ReduceHealth();
+                }
                 Destroy(gameObject);
             }
             waypointIndex++;

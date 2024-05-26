@@ -9,6 +9,14 @@ public class EnemyHealth : MonoBehaviour
 
     private bool isDestroyed = false;
 
+    private void Update()
+    {
+        if (gameObject.layer == 8)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        }
+    }
+
     public void TakeDamage(int dmg)
     {
         health -= dmg;
@@ -18,7 +26,8 @@ public class EnemyHealth : MonoBehaviour
             Summoner.onEnemyDestroy.Invoke();
             GameManager.main.AddGold(reward);
             isDestroyed = true;
-            Destroy(gameObject);
+            gameObject.layer = 8;
+            //Destroy(gameObject);
         }
     }
 }
