@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
@@ -25,5 +26,14 @@ public class GameOver : MonoBehaviour
     public void SetWaves(int _waves)
     {
         waves = _waves;
+    }
+    public void RetryLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void MainLevel()
+    {
+        SceneManager.LoadScene(0);
     }
 }
