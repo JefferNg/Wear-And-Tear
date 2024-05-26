@@ -10,6 +10,14 @@ public class BulletBehavior : MonoBehaviour
 
     private Transform target;
 
+    private void Update()
+    {
+        if (transform.position.x < -10f || transform.position.x > 10f || transform.position.y < -7f || transform.position.y > 7f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void FixedUpdate()
     {
         if (!target) return;
