@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI healthUI;
     [SerializeField] private TextMeshProUGUI nextWaveUI;
     [SerializeField] private int startLives = 10;
-    [SerializeField] Animator anim;
+    [SerializeField] Animator nextWaveAnim;
+    [SerializeField] Animator goldCountAnim;
 
     public Transform startPoint;
     public Transform[] path;
@@ -21,6 +22,8 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverUI;
     private float waveCounter;
     public bool nextWave;
+    private bool lowGold = false;
+    private float timer = 3f;
 
     private void Awake()
     {
@@ -34,7 +37,7 @@ public class GameManager : MonoBehaviour
         gameEnd = false;
         waveCounter = Summoner.main.waveDelay;
         nextWave = true;
-        anim.SetBool("WaveDone", nextWave);
+        nextWaveAnim.SetBool("WaveDone", nextWave);
     }
 
     private void Update()
@@ -58,8 +61,22 @@ public class GameManager : MonoBehaviour
                 nextWave = true;
                 waveCounter -= Time.deltaTime;
             }
-            anim.SetBool("WaveDone", nextWave);
+            nextWaveAnim.SetBool("WaveDone", nextWave);
             
+        }
+
+        if (lowGold)
+        {
+            if (timer  > 0f)
+            {
+                timer -= Time.deltaTime;
+            }
+            else
+            {
+                goldCountAnim.SetBool("LowGold", false);
+                lowGold = false;
+                timer = 3f;
+            }
         }
         
     }
@@ -85,8 +102,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // add ui
-            Debug.Log("Not enough gold");
+            lowGold = true;
+            goldCountAnim.SetBool("LowGold", true);
+
             return false;
         }
     }

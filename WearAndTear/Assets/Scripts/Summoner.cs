@@ -102,6 +102,7 @@ public class Summoner : MonoBehaviour
         isSpawning = false;
         timeLastSpawn = 0f;
         wave++;
+        spawnDelay += 0.1f;
         StartCoroutine(StartWave());
     }
 
