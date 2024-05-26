@@ -30,7 +30,6 @@ public class TowerPlacement : MonoBehaviour
             return;
         }
         towerToBuild = towers[tower];
-        Menu.main.ToggleMenu();
     }
 
 }

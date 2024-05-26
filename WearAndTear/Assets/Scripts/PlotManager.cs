@@ -52,8 +52,6 @@ public class PlotManager : MonoBehaviour
         GameManager.main.SpendGold(towerBuild.cost);
 
         tower = Instantiate(towerBuild.prefab, transform.position, Quaternion.identity);
-
-        TowerPlacement.main.SetTower(-1);
     }
 
 }

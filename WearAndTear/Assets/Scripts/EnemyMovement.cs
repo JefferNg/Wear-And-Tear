@@ -30,6 +30,7 @@ public class EnemyMovement : MonoBehaviour
             if (waypointIndex == waypoints.waypoints.Length - 1) 
             {
                 Summoner.onEnemyDestroy.Invoke();
+                GameManager.main.ReduceHealth();
                 Destroy(gameObject);
             }
             waypointIndex++;

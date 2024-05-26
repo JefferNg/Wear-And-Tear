@@ -2838,6 +2838,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5499947264714434869, guid: d3741d38e68e8c84393c9af8a9c54aa6, type: 3}
   m_PrefabInstance: {fileID: 1406158960}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &829612467 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2112332515850323333, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+  m_PrefabInstance: {fileID: 3101548934607918765}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &829931558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5116,6 +5127,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5499947264714434869, guid: d3741d38e68e8c84393c9af8a9c54aa6, type: 3}
   m_PrefabInstance: {fileID: 451667455}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1470273177 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7368786415603344768, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+  m_PrefabInstance: {fileID: 3101548934607918765}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1471064434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5537,6 +5559,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2080336386861811910, guid: e40873c069264354a9f958960df2020d, type: 3}
   m_PrefabInstance: {fileID: 6598073397743821693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1728201531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6576949705513197135, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+  m_PrefabInstance: {fileID: 3101548934607918765}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1735841617
 PrefabInstance:
@@ -7679,6 +7706,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
+      propertyPath: waveUI
+      value: 
+      objectReference: {fileID: 829612467}
+    - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
+      propertyPath: healthUI
+      value: 
+      objectReference: {fileID: 1470273177}
+    - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
+      propertyPath: gameOverUI
+      value: 
+      objectReference: {fileID: 1728201531}
+    - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
+      propertyPath: startLives
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: startPoint
       value: 

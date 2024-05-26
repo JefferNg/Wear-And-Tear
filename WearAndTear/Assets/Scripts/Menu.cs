@@ -24,8 +24,11 @@ public class Menu : MonoBehaviour
 
     public void ToggleMenu()
     {
+        if (GameManager.main.gameEnd) return;
+
         isMenuOpen = !isMenuOpen;
         anim.SetBool("MenuOpen", isMenuOpen);
+        TowerPlacement.main.SetTower(-1);
     }
 
 }

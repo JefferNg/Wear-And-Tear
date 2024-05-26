@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Summoner : MonoBehaviour
 {
+    public static Summoner main;
 
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private int baseEnemies = 8;
@@ -14,7 +15,7 @@ public class Summoner : MonoBehaviour
 
     public static UnityEvent onEnemyDestroy = new UnityEvent();
 
-    private int wave = 1;
+    public int wave = 1;
     private float timeLastSpawn;
     private int enemiesActive;
     private int enemiesRemain;
@@ -23,6 +24,7 @@ public class Summoner : MonoBehaviour
     private void Awake()
     {
         onEnemyDestroy.AddListener(EnemyDestroyed);
+        main = this;
     }
 
     private void Start()
