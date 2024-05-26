@@ -617,7 +617,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 402725698043797385, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: wave
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 402725698043797385, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: enemyPrefabs.Array.size
@@ -631,6 +631,10 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1727648801}
+    - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
+      propertyPath: gold
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: waveUI
       value: 
@@ -649,7 +653,7 @@ PrefabInstance:
       objectReference: {fileID: 1727648799}
     - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: startLives
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: startPoint

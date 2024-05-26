@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] float speed;
+    public static EnemyMovement main;
+
+    [SerializeField] public float speed;
     private Waypoints waypoints;
 
     private int waypointIndex;
+
+    private void Awake()
+    {
+        main = this;
+    }
 
     private void Start()
     {

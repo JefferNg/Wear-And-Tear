@@ -103,6 +103,7 @@ public class Summoner : MonoBehaviour
         timeLastSpawn = 0f;
         wave++;
         spawnDelay += 0.1f;
+        EnemyMovement.main.speed += 0.1f;
         StartCoroutine(StartWave());
     }
 

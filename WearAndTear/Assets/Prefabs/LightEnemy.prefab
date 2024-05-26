@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 229ca6ec6c4e10440b1dcb3bafb0ebff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
 --- !u!114 &6047994107065034216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c743bd9da353274bb214b42fe06d5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 5
   reward: 10
   clothed: {fileID: 2012672556, guid: ee1efdcb556c687408ef96d189640f4b, type: 3}
   unclothed: {fileID: -325639557, guid: ee1efdcb556c687408ef96d189640f4b, type: 3}
