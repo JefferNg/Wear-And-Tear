@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI waveUI;
     [SerializeField] private TextMeshProUGUI healthUI;
+    [SerializeField] private TextMeshProUGUI nextWaveUI;
     [SerializeField] private int startLives = 10;
+    [SerializeField] Animator anim;
 
     public Transform startPoint;
     public Transform[] path;
@@ -17,6 +19,8 @@ public class GameManager : MonoBehaviour
     public int gold;
     public bool gameEnd = false;
     public GameObject gameOverUI;
+    private float waveCounter;
+    public bool nextWave;
 
     private void Awake()
     {
@@ -28,6 +32,9 @@ public class GameManager : MonoBehaviour
         gold = 100;
         lives = startLives;
         gameEnd = false;
+        waveCounter = Summoner.main.waveDelay;
+        nextWave = true;
+        anim.SetBool("WaveDone", nextWave);
     }
 
     private void Update()
@@ -38,12 +45,30 @@ public class GameManager : MonoBehaviour
         {
             EndGame();
         }
+
+        if (nextWave)
+        {
+            if (waveCounter <= 0f)
+            {
+                waveCounter = Summoner.main.waveDelay;
+                nextWave = false;
+            }
+            else
+            {
+                nextWave = true;
+                waveCounter -= Time.deltaTime;
+            }
+            anim.SetBool("WaveDone", nextWave);
+            
+        }
+        
     }
 
     private void OnGUI()
     {
         waveUI.text = "Wave: " + Summoner.main.wave;
         healthUI.text = "Health: " + lives.ToString();
+        nextWaveUI.text = "Next Wave In " + ((int) waveCounter).ToString();
     }
 
     public void AddGold(int amt)

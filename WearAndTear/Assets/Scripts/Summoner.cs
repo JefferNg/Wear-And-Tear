@@ -10,7 +10,7 @@ public class Summoner : MonoBehaviour
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private int baseEnemies = 8;
     [SerializeField] private float spawnDelay = 0.5f;
-    [SerializeField] private float waveDelay = 5f;
+    [SerializeField] public float waveDelay = 5f;
     [SerializeField] private float difficultyScale = 0.75f;
 
     public static UnityEvent onEnemyDestroy = new UnityEvent();
@@ -19,7 +19,9 @@ public class Summoner : MonoBehaviour
     private float timeLastSpawn;
     private int enemiesActive;
     private int enemiesRemain;
-    private bool isSpawning = false;
+    private int lightEnemiesRemain;
+    private int heavyEnemiesRemain;
+    public bool isSpawning = false;
 
     private void Awake()
     {
@@ -39,10 +41,20 @@ public class Summoner : MonoBehaviour
 
         timeLastSpawn += Time.deltaTime;
 
-        if (timeLastSpawn >= 1f/spawnDelay && enemiesRemain > 0)
+        if (timeLastSpawn >= 1f/spawnDelay && lightEnemiesRemain > 0) // spawn light enemies
         {
-            SpawnEnemy();
+            SpawnEnemy(enemyPrefabs[0]);
             enemiesRemain--;
+            lightEnemiesRemain--;
+            enemiesActive++;
+            timeLastSpawn = 0f;
+        }
+
+        if (timeLastSpawn >= 1f / spawnDelay && heavyEnemiesRemain > 0) // spawn heavy enemies
+        {
+            SpawnEnemy(enemyPrefabs[1]);
+            enemiesRemain--;
+            heavyEnemiesRemain--;
             enemiesActive++;
             timeLastSpawn = 0f;
         }
@@ -55,9 +67,19 @@ public class Summoner : MonoBehaviour
 
     private IEnumerator StartWave()
     {
+        GameManager.main.nextWave = true;
         yield return new WaitForSeconds(waveDelay);
         isSpawning = true;
         enemiesRemain = EnemiesPerWave();
+        if (wave > 2)
+        {
+            lightEnemiesRemain = (int)(enemiesRemain * 0.75);
+            heavyEnemiesRemain = enemiesRemain - lightEnemiesRemain;
+        }
+        else
+        {
+            lightEnemiesRemain = enemiesRemain;
+        }
     }
 
     private int EnemiesPerWave()
@@ -65,9 +87,8 @@ public class Summoner : MonoBehaviour
         return Mathf.RoundToInt(baseEnemies * Mathf.Pow(wave, difficultyScale));
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemy(GameObject spawn)
     {
-        GameObject spawn = enemyPrefabs[0]; // choose type of enemy
         Instantiate(spawn, GameManager.main.startPoint.position, Quaternion.identity);
     }
 

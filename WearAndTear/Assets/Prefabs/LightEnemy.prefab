@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6047994107065034216}
   - component: {fileID: 6082311882732186079}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: LightEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  reward: 20
+  reward: 10
 --- !u!58 &6082311882732186079
 CircleCollider2D:
   m_ObjectHideFlags: 0
