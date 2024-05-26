@@ -68,7 +68,7 @@ public class TowerTargeting : MonoBehaviour
 
     private void RotateToTarget()
     {
-        float angle = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg - 90f;
+        float angle = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg + 90f;
         
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
         rotatePoint.rotation = Quaternion.RotateTowards(rotatePoint.rotation, targetRotation, rotationSpeed * Time.deltaTime);
