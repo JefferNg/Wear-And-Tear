@@ -6,14 +6,23 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int health = 2;
     [SerializeField] private int reward = 20;
+    [SerializeField] private Sprite clothed;
+    [SerializeField] private Sprite unclothed;
+    [SerializeField] private SpriteRenderer sr;
 
     private bool isDestroyed = false;
+
+    private void Start()
+    {
+        sr.sprite = unclothed;
+    }
 
     private void Update()
     {
         if (gameObject.layer == 8)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            //gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            sr.sprite = clothed;
         }
     }
 

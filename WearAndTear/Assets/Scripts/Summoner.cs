@@ -89,7 +89,7 @@ public class Summoner : MonoBehaviour
 
     private void SpawnEnemy(GameObject spawn)
     {
-        Instantiate(spawn, GameManager.main.startPoint.position, Quaternion.identity);
+        Instantiate(spawn, GameManager.main.startPoint.position, Quaternion.Euler(0f, 0f, -90f));
     }
 
     private void EnemyDestroyed()
