@@ -4750,6 +4750,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3119948333664734464, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
   m_PrefabInstance: {fileID: 3101548934607918765}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1313733529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1313733530}
+  m_Layer: 0
+  m_Name: NextWaveUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1313733530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313733529}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 137.09375, y: 57.21167, z: 7.4539475}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1312575347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1323194539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5499947264714434869, guid: d3741d38e68e8c84393c9af8a9c54aa6, type: 3}
@@ -5576,6 +5607,7 @@ GameObject:
   - component: {fileID: 1727648798}
   - component: {fileID: 1727648800}
   - component: {fileID: 1727648799}
+  - component: {fileID: 1727648801}
   m_Layer: 5
   m_Name: NextWave
   m_TagString: Untagged
@@ -5699,6 +5731,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727648797}
   m_CullTransparentMesh: 1
+--- !u!95 &1727648801
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727648797}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a8df7559f8b7244582fce45cb62f7ac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1728201531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6576949705513197135, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
@@ -7941,6 +7994,9 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3119948333664734464, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1313733530}
+    - targetCorrespondingSourceObject: {fileID: 3119948333664734464, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1727648798}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
@@ -7965,7 +8021,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 402725698043797385, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: wave
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 402725698043797385, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: enemyPrefabs.Array.size
@@ -7975,6 +8031,10 @@ PrefabInstance:
       propertyPath: enemyPrefabs.Array.data[1]
       value: 
       objectReference: {fileID: 4182736683668163904, guid: 19202fedb7d032f46a0bc50566caf074, type: 3}
+    - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1727648801}
     - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: waveUI
       value: 
