@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        gold = 100;
         lives = startLives;
         gameEnd = false;
         waveCounter = Summoner.main.waveDelay;

@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c743bd9da353274bb214b42fe06d5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  reward: 25
+  health: 35
+  reward: 20
   clothed: {fileID: 410829810, guid: ee1efdcb556c687408ef96d189640f4b, type: 3}
   unclothed: {fileID: 1876704079, guid: ee1efdcb556c687408ef96d189640f4b, type: 3}
   sr: {fileID: 2079572001424286241}

@@ -85,10 +85,4 @@ public class TowerTargeting : MonoBehaviour
         BulletBehavior bscript = bullet.GetComponent<BulletBehavior>();
         bscript.SetTarget(target, 6); // value of enemy layer
     }
-
-    private void OnDrawGizmosSelected()
-    {
-        Handles.color = Color.cyan;
-        Handles.DrawWireDisc(transform.position, transform.forward, targetRange);
-    }
 }

@@ -450,7 +450,8 @@ PrefabInstance:
       value: PlotMap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1964650396111039772, guid: c08ee21d528ce49448ebfb7c9b2f9db9, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c08ee21d528ce49448ebfb7c9b2f9db9, type: 3}
@@ -546,6 +547,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5378475438618144898, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+      propertyPath: m_text
+      value: 'Shirt Cannon (75g)
+
+        (short range, 1 dmg)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378475438618144898, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+      propertyPath: m_fontSize
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378475438618144898, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378475438618144898, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 6440718241089845545, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -554,6 +573,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 432708292}
+    - target: {fileID: 8525851267451702020, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+      propertyPath: m_CellSize.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8634728496862307017, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -577,6 +600,24 @@ PrefabInstance:
     - target: {fileID: 8634728496862307017, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777241643419746651, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+      propertyPath: m_text
+      value: 'Mad Hatter (150g)
+
+        (long range, 2 dmg)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777241643419746651, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+      propertyPath: m_fontSize
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777241643419746651, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777241643419746651, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8915619069827567062, guid: 0845d8584290b2f47bff39984203ece9, type: 3}
       propertyPath: m_AnchorMax.y
@@ -633,7 +674,7 @@ PrefabInstance:
       objectReference: {fileID: 1727648801}
     - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: gold
-      value: 180
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1726991514212696271, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: waveUI
@@ -730,6 +771,14 @@ PrefabInstance:
     - target: {fileID: 4330557412907042534, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233864908493587580, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
+      propertyPath: towers.Array.data[0].cost
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233864908493587580, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
+      propertyPath: towers.Array.data[1].cost
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7982551367460016111, guid: 1f6f5f2d283e09d44b3977d8441b7032, type: 3}
       propertyPath: m_LocalPosition.x
