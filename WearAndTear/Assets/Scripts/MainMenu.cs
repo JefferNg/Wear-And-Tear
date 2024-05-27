@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject creditsPage;
+    [SerializeField] private GameObject howToPage;
 
     private void Start()
     {
@@ -24,10 +25,17 @@ public class MainMenu : MonoBehaviour
         creditsPage.SetActive(true);
     }
 
-    public void CloseCredits()
+    public void OpenHowTo()
+    {
+        mainMenu.SetActive(false);
+        howToPage.SetActive(true);
+    }
+
+    public void ReturnToMenu()
     {
         mainMenu.SetActive(true);
         creditsPage.SetActive(false);
+        howToPage.SetActive(false);
     }
 
     public void ExitGame()
