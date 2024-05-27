@@ -21,7 +21,6 @@ public class EnemyHealth : MonoBehaviour
     {
         if (gameObject.layer == 8)
         {
-            //gameObject.GetComponent<SpriteRenderer>().color = Color.green;
             sr.sprite = clothed;
         }
     }
@@ -36,7 +35,6 @@ public class EnemyHealth : MonoBehaviour
             GameManager.main.AddGold(reward);
             isDestroyed = true;
             gameObject.layer = 8;
-            //Destroy(gameObject);
         }
     }
 }

@@ -43,12 +43,6 @@ public class PlotManager : MonoBehaviour
 
         Tower towerBuild = TowerPlacement.main.GetTower();
 
-        /*if (towerBuild.cost > GameManager.main.gold)
-        {
-            Debug.Log("Tower too expensive");
-            return;
-        }*/
-
         if (GameManager.main.SpendGold(towerBuild.cost))
         {
             tower = Instantiate(towerBuild.prefab, transform.position, Quaternion.identity);
